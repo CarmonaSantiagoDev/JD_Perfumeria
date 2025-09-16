@@ -1,0 +1,484 @@
+/* 🎨 STYLE.CSS */
+/* Colores base elegantes */
+:root {
+  --primary: #0b1736;       /* Azul oscuro */
+  --secondary: #3c4a63;     /* Gris azulado */
+  --light: #f9f9f9;       /* Blanco suave */
+  --text-dark: #222;
+  --text-light: #fff;
+  --accent: #e0b973;      /* Dorado elegante */
+  --max-width: 1200px;
+  --radius: 12px;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===== CONTENEDORES ===== */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* ===== HEADER OPTIMIZADO ===== */
+/* ===== HEADER OPTIMIZADO ===== */
+.site-header {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.logo span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover span {
+  color: var(--accent);
+}
+
+/* Menú de navegación principal */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.main-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+/* Menú de usuario con submenú */
+.user-menu {
+  position: relative;
+}
+
+.user-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.user-submenu.active {
+  display: block;
+}
+
+.user-submenu li {
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.user-submenu a {
+  display: block;
+  padding: 12px 15px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.user-submenu a:hover {
+  background: #f8f8f8;
+  color: var(--primary);
+}
+
+/* Contador de carrito */
+.menu-carrito {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent);
+  color: var(--text-dark);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón de menú hamburguesa (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-light);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .header-inner {
+    padding: 0 1rem;
+  }
+  
+  .main-nav ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .main-nav.active {
+    max-height: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+    gap: 0;
+  }
+  
+  .main-nav li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .main-nav a {
+    padding: 12px 0;
+    width: 100%;
+  }
+  
+  .user-menu {
+    width: 100%;
+  }
+  
+  .user-submenu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .user-submenu a {
+    padding-left: 2rem;
+  }
+  
+  /* Animación del botón hamburguesa */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Pequeños ajustes para móviles muy pequeños */
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 1.2rem;
+  }
+  
+  .logo-img {
+    height: 35px;
+  }
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.logo:hover .logo-text {
+  color: var(--accent);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+/* Esto es para el menú de hamburguesa, que no se verá en escritorio */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 12px 25px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+.btn-secundario {
+  background: var(--accent);
+  color: var(--text-dark);
+}
+
+.btn-grande {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== CATEGORÍAS ===== */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.categoria-card {
+  border-radius: var(--radius);
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.categoria-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.btn-categoria {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--accent);
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+/* ===== TESTIMONIOS ===== */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.testimonio {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.testimonio-stars {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* ===== CTA ===== */
+.cta {
+  border-radius: var(--radius);
+  margin: 50px auto;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 10px;
+  font-size: 0.9rem;
+  color: #ddd;
+}

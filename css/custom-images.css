@@ -1,0 +1,55 @@
+/* 🎨 CUSTOM-IMAGES.CSS */
+/* Archivo encargado de manejar todas las imágenes de fondo y logos */
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: 
+    linear-gradient(180deg, rgba(11,23,54,0.55) 0%, rgba(11,23,54,0.75) 100%),
+    url('/JD_Perfumeria/img/backgrounds/hero-bg.jpg') no-repeat center center / cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* ===== CATEGORÍAS ===== */
+.categoria-card.masculino {
+  background: 
+    linear-gradient(180deg, rgba(11,23,54,0.45), rgba(11,23,54,0.75)),
+    url('/JD_Perfumeria/img/backgrounds/masculino-bg.jpg') no-repeat center center / cover;
+  color: #fff;
+}
+
+.categoria-card.femenino {
+  background: 
+    linear-gradient(180deg, rgba(90,50,100,0.45), rgba(90,50,100,0.75)),
+    url('/JD_Perfumeria/img/backgrounds/femenino-bg.jpg') no-repeat center center / cover;
+  color: #fff;
+}
+
+.categoria-card.unisex {
+  background: 
+    linear-gradient(180deg, rgba(33,64,109,0.45), rgba(33,64,109,0.75)),
+    url('/JD_Perfumeria/img/backgrounds/unisex-bg.jpg') no-repeat center center / cover;
+  color: #fff;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  background: 
+    linear-gradient(180deg, rgba(11,23,54,0.65), rgba(11,23,54,0.85)),
+    url('/JD_Perfumeria/img/backgrounds/cta-bg.jpg') no-repeat center center / cover;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* ===== LOGO ===== */
+.logo-icon {
+  background-image: url('/JD_Perfumeria/img/logos/logo-jd.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
